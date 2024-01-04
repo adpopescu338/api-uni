@@ -6,7 +6,7 @@ import { getHashedPassword } from 'libs/getHashedPassword';
 export const createUser = async (
   _: unknown,
   { input }: MutationCreateUserArgs,
-  { prisma, user }: Context,
+  { prisma, user, cacheManager }: Context,
 ) => {
   throwIfNotAdmin(user);
 
@@ -18,6 +18,8 @@ export const createUser = async (
       password,
     },
   });
+
+  cacheManager.del(cacheManager.cacheKeys.usersCount);
 
   return newUser;
 };

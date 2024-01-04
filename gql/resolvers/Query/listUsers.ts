@@ -1,4 +1,4 @@
-import { GraphQLError } from 'graphql/error';
+import { throwIfNotAdmin } from 'libs/throwIfNotAdmin';
 import { Context } from 'libs/types';
 import { ListUsersResponse, QueryListUsersArgs } from 'libs/types/generated';
 
@@ -9,12 +9,7 @@ export const listUsers = async (
   { page, size }: QueryListUsersArgs,
   ctx: Context,
 ): Promise<ListUsersResponse> => {
-  if (!ctx.user?.isSysAdmin)
-    throw new GraphQLError('Access denied', {
-      extensions: {
-        code: 'ACCESS_DENIED',
-      },
-    });
+  throwIfNotAdmin(ctx.user);
 
   size ??= DEFAULT_SIZE;
   const [users, total] = await Promise.all([

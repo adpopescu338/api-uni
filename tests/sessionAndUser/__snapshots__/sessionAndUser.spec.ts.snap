@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sessionAndUser Should query the database and return the expected result 1`] = `
+[
+  {
+    "include": {
+      "roles": {
+        "include": {
+          "permissions": true,
+        },
+      },
+    },
+    "where": {
+      "id": "321",
+    },
+  },
+]
+`;

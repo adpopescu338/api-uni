@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`listUsers Should return the expected result 1`] = `
+[
+  [
+    {
+      "include": {
+        "roles": {
+          "include": {
+            "permissions": true,
+          },
+        },
+      },
+      "skip": undefined,
+      "take": 5,
+    },
+  ],
+]
+`;
+
+exports[`listUsers Should return the expected result with count from prisma 1`] = `
+[
+  [
+    {
+      "include": {
+        "roles": {
+          "include": {
+            "permissions": true,
+          },
+        },
+      },
+      "skip": undefined,
+      "take": 5,
+    },
+  ],
+  [
+    {
+      "include": {
+        "roles": {
+          "include": {
+            "permissions": true,
+          },
+        },
+      },
+      "skip": undefined,
+      "take": 5,
+    },
+  ],
+]
+`;

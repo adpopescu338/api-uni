@@ -1,8 +1,8 @@
 import { GraphQLError } from 'graphql';
 import { Context, RedisSession } from 'libs/types';
-import { Session, SessionAndUserResponse } from 'libs/types/generated';
+import { SessionAndUserResponse } from 'libs/types/generated';
 
-export const session = async (
+export const sessionAndUser = async (
   _: unknown,
   __: unknown,
   { cacheManager, prisma, sessionKey }: Context,
@@ -11,7 +11,9 @@ export const session = async (
 
   const sessionData = await cacheManager.get<RedisSession>(sessionKey, true);
 
-  if (!sessionData) return null;
+  if (!sessionData) {
+    throw new GraphQLError('Invalid session');
+  }
 
   const user = await prisma.user.findUnique({
     where: {
