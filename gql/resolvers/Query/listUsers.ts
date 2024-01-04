@@ -1,4 +1,4 @@
-import { throwIfNotAdmin } from 'libs/throwIfNotAdmin';
+import { throwIfNotAdmin } from '../../../libs/throwIfNotAdmin';
 import { Context } from 'libs/types';
 import { ListUsersResponse, QueryListUsersArgs } from 'libs/types/generated';
 

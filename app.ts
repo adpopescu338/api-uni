@@ -1,4 +1,3 @@
-import { join } from 'path';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 import {
@@ -17,10 +16,10 @@ import { buildSubgraphSchema } from '@apollo/subgraph';
 import { buildContext, logExpressMiddleware, logGqlMiddleware } from './libs/gql';
 import { applyMiddleware } from 'graphql-middleware';
 import { getLogger, Logger } from './libs/logger';
-import { CacheManager } from 'libs/cache';
+import { CacheManager } from './libs/cache';
 import { config } from 'dotenv';
 import { Level } from 'pino';
-import { client as prisma } from 'prisma/client';
+import { client as prisma } from './prisma/client';
 
 class Main {
   private logger: Logger;
@@ -72,7 +71,7 @@ class Main {
   private async generateApolloServer(schemaWithMiddleware: GraphQLSchema): Promise<ApolloServer> {
     const server = new ApolloServer({
       schema: schemaWithMiddleware,
-      introspection: !this.production,
+      introspection: true,
       formatError: (error) => {
         if (error?.extensions?.code !== 'UNAUTHENTICATED') {
           this.logger.debug(
@@ -99,9 +98,11 @@ class Main {
             },
           },
         }),
-        !this.production
-          ? ApolloServerPluginLandingPageLocalDefault()
-          : ApolloServerPluginLandingPageProductionDefault(),
+        ApolloServerPluginLandingPageLocalDefault()
+        // TODO: Uncomment the code below when deploying to prod
+        // !this.production
+        //   ? ApolloServerPluginLandingPageLocalDefault()
+        //   : ApolloServerPluginLandingPageProductionDefault(),
       ],
     });
 

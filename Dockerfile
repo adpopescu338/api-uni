@@ -4,12 +4,13 @@ FROM node:18-alpine
 # Set the working directory in the container to /app
 WORKDIR /app
 
-COPY . .
+COPY package.json .
+COPY yarn.lock .
 
 # install dependencies, lockfile
 RUN yarn install --production --frozen-lockfile
 
-ENV NODE_ENV=production
+COPY . .
 
 RUN yarn prisma generate
 

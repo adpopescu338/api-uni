@@ -1,7 +1,7 @@
 import { Context } from 'libs/types';
 import { MutationUpdateUserArgs } from 'libs/types/generated';
-import { throwIfNotAdmin } from 'libs/throwIfNotAdmin';
-import { getHashedPassword } from 'libs/getHashedPassword';
+import { throwIfNotAdmin } from '../../../libs/throwIfNotAdmin';
+import { getHashedPassword } from '../../../libs/getHashedPassword';
 
 export const updateUser = async (
   _: unknown,

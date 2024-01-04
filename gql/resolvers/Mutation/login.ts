@@ -1,5 +1,5 @@
 import { Context, RedisSession } from 'libs/types';
-import { MutationLoginArgs, Session } from 'libs/types/generated';
+import { MutationLoginArgs } from 'libs/types/generated';
 import bcrypt from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
 import { omit } from 'lodash';

@@ -1,6 +1,6 @@
 import { Permission } from '@prisma/client';
 import { GraphQLError } from 'graphql';
-import { throwIfNotAdmin } from 'libs/throwIfNotAdmin';
+import { throwIfNotAdmin } from '../../../libs/throwIfNotAdmin';
 import { Context, MutationUpdatePermissionsArgs } from 'libs/types';
 
 export const updatePermissions = async (

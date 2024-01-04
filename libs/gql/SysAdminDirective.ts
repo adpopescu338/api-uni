@@ -6,7 +6,6 @@ export const SysAdminDirective = (schema: GraphQLSchema): GraphQLSchema =>
   mapSchema(schema, {
     [MapperKind.OBJECT_FIELD]: (fieldConfig) => {
       const directive = getDirective(schema, fieldConfig, 'sysadmin')?.[0];
-      console.log('directive ========== ', directive);
       if (!directive) return;
 
       const { resolve = defaultFieldResolver } = fieldConfig;
@@ -14,7 +13,6 @@ export const SysAdminDirective = (schema: GraphQLSchema): GraphQLSchema =>
       return {
         ...fieldConfig,
         resolve: function (source, args, context, info) {
-          console.log('context.user =========== ', context);
           if (!context?.user?.isSysAdmin && !context.introspection) {
             throw new GraphQLError('Access denied', {
               extensions: {

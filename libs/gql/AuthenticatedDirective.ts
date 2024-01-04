@@ -14,7 +14,6 @@ export const AuthenticatedDirective = (schema: GraphQLSchema): GraphQLSchema =>
       return {
         ...fieldConfig,
         resolve: async function (source, args, context, info) {
-          console.log('context.user ======== ', context);
           if (!context?.user && !context.introspection) {
             throw new GraphQLError('not authorized', {
               extensions: {
