@@ -16,7 +16,6 @@ You can use the `login` mutation to get a token, then use it in the `x-session-i
 git clone https://github.com/adpopescu338/api-uni && cd api-uni
 ```
 
-Rename `.env.example` to `.env`. You can leave the values as they are.
 Then:
 
 ```bash
@@ -36,6 +35,20 @@ You can now open localhost:3000 and explore the api.
 The password for all users is `password`.
 You can pick any email from the db.
 To explore the db, just run `yarn prisma studio`.
+
+## Local dev
+
+Rename `.env.example` to `.env`. You can leave the values as they are.
+Then run `yarn` to install the dependencies.
+
+To start the database and redis, you can use the script:
+
+```bash
+chmod +x ./scripts/startRedisAndPostgres
+./scripts/startRedisAndPostgres
+```
+Then run the migrations with `yarn prisma migrate deploy`.
+Then you can start the server with `yarn dev`.
 
 ## Test
 
