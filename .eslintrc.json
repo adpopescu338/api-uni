@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json",
+    "createDefaultProgram": true
+  },
+  "extends": ["eslint:recommended", "prettier", "prettier/@typescript-eslint"],
+  "env": {
+    "node": true
+  },
+  "overrides": [
+    {
+      "files": ["*.spec.ts"],
+      "env": {
+        "jest": true
+      },
+      "rules": {}
+    }
+  ]
+}
