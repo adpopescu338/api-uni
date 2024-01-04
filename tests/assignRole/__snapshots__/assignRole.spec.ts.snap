@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`assignRole Should save the correct data and return the role 1`] = `
+[
+  {
+    "data": {
+      "roles": {
+        "connect": {
+          "id": "123",
+        },
+      },
+    },
+    "include": {
+      "roles": {
+        "include": {
+          "permissions": true,
+        },
+      },
+    },
+    "where": {
+      "id": "456",
+    },
+  },
+]
+`;

@@ -1,8 +1,8 @@
 import { Context, RedisSession } from 'libs/types';
 import { MutationLoginArgs } from 'libs/types/generated';
-import bcrypt from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
 import { omit } from 'lodash';
+import bcrypt from 'bcryptjs';
 
 export const login = async (
   _: unknown,

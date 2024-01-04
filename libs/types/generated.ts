@@ -30,6 +30,8 @@ export type ListUsersResponse = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  /** Only sysadmins can assign roles */
+  assignRole: User;
   /** Only sysadmins can create permissions */
   createPermissions: Array<Permission>;
   /** Only sysadmins can create roles */
@@ -46,12 +48,19 @@ export type Mutation = {
    * This needs to be sent in subsequent requests as a header called 'x-session-id'
    */
   login: Scalars['String']['output'];
+  /** Delete the current session */
+  logout: VoidApiResponse;
   /** Only sysadmins can update permissions */
   updatePermissions: Array<Permission>;
   /** Only sysadmins can update roles */
   updateRole: UserDefinedRole;
   /** If you're not sysadmin, you must be authenticated as the user you're trying to update */
   updateUser: User;
+};
+
+export type MutationAssignRoleArgs = {
+  roleId: Scalars['String']['input'];
+  userId: Scalars['String']['input'];
 };
 
 export type MutationCreatePermissionsArgs = {
@@ -179,7 +188,7 @@ export type UserDefinedRole = {
 
 export type UserInput = {
   email: Scalars['String']['input'];
-  isSysAdmin: Scalars['Boolean']['input'];
+  isSysAdmin?: InputMaybe<Scalars['Boolean']['input']>;
   name: Scalars['String']['input'];
   password: Scalars['String']['input'];
 };

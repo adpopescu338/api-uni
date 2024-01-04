@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`updateRole Should save the correct data and return the role 1`] = `
+[
+  {
+    "data": {
+      "description": "description",
+      "name": "name",
+      "permissions": {
+        "set": [
+          {
+            "id": "id",
+          },
+        ],
+      },
+    },
+    "where": {
+      "id": "id",
+    },
+  },
+]
+`;

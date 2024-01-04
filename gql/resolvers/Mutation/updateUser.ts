@@ -22,6 +22,7 @@ export const updateUser = async (
     data: {
       ...input,
       password,
+      isSysAdmin: input.isSysAdmin || false,
     },
   });
 

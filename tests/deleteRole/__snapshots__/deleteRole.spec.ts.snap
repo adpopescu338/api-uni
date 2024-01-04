@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deleteRole Should delete the role and return success: true 1`] = `
+[
+  {
+    "where": {
+      "id": "id",
+    },
+  },
+]
+`;

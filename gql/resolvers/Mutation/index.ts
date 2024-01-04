@@ -4,6 +4,7 @@ import { logout } from './logout';
 import { createRole } from './createRole';
 import { updateRole } from './updateRole';
 import { deleteRole } from './deleteRole';
+import { assignRole } from './assignRole';
 
 import { createPermissions } from './createPermissions';
 import { updatePermissions } from './updatePermissions';
@@ -19,6 +20,7 @@ export const Mutation = {
   createRole,
   updateRole,
   deleteRole,
+  assignRole,
 
   createPermissions,
   updatePermissions,

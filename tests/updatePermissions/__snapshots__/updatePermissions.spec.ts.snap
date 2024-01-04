@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`updatePermissions Should save the correct data and return the permissions 1`] = `
+[
+  {
+    "data": {
+      "operationTypes": {
+        "set": [
+          "READ",
+        ],
+      },
+      "resourceName": "someResource",
+    },
+    "where": {
+      "id": "id",
+    },
+  },
+]
+`;

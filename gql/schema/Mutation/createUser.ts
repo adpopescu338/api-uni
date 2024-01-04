@@ -11,7 +11,7 @@ export const createUser = gql`
   input UserInput {
     email: String!
     name: String!
-    isSysAdmin: Boolean!
+    isSysAdmin: Boolean = false
     password: String!
   }
 `;

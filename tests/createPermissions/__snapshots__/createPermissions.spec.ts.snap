@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createPermissions Should save the correct data and return the permissions 1`] = `
+[
+  {
+    "data": [
+      {
+        "operationTypes": [
+          "READ",
+        ],
+        "resourceName": "someResource",
+      },
+    ],
+  },
+]
+`;

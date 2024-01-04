@@ -16,10 +16,14 @@ export const createUser = async (
     data: {
       ...input,
       password,
+      isSysAdmin: input.isSysAdmin || false,
     },
   });
 
   cacheManager.del(cacheManager.cacheKeys.usersCount);
 
-  return newUser;
+  return {
+    ...newUser,
+    roles: [],
+  };
 };

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`updateUser Should save the correct data and return the user 1`] = `
+[
+  {
+    "data": {
+      "email": "email",
+      "isSysAdmin": false,
+      "name": "name",
+      "password": "hashed--password",
+    },
+    "where": {
+      "id": "id",
+    },
+  },
+]
+`;

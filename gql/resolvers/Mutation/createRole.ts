@@ -13,9 +13,11 @@ export const createRole = async (
     data: {
       name,
       description,
-      permissions: {
-        connect: permissionIds.map((id) => ({ id })),
-      },
+      ...(permissionIds.length && {
+        permissions: {
+          connect: permissionIds.map((id) => ({ id })),
+        },
+      }),
     },
   });
 

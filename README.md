@@ -6,9 +6,8 @@
 
 This is a graphql api built with apollo-server, prisma and postgres.
 The requirements were quite relaxed, or vague, so I might have gone a bit out of scope. But I suppose the purpose was to familiarize with graphql and prisma, so it was a good exercise.
-It feels a bit weird to kinda duplicate definitions in the schema.prisma and the graphql schema, so if I have any time I'll explore this interesting library: https://prisma.typegraphql.com
 
-After starting the app, I advise you to pick a user with `isSysAdmin: true` as simple users can't do much, apart from updating their details. 
+After starting the app, I advise you to pick a user with `isSysAdmin: true` as simple users can't do much, apart from updating their details.
 You can use the `login` mutation to get a token, then use it in the `x-session-id` header to access the other mutations / queries.
 
 ## Start
@@ -46,10 +45,10 @@ yarn jest
 
 ## What's next?
 
-#### Tests
-
-I didn't write tests for all mutations. Just for the queries. If I don't get some real work to do, I'll write tests for the mutations too.
-
 #### Custom graphql directives
 
 I tried adding 2 custom directives `@authenticated` and `@sysadmin`, but for some reason the request is never reaching the resolver. I spent a few hours trying to debug, then I preferred to move on. I'll get back to it if I have more time.
+
+#### Prisma and graphql
+
+It feels a bit weird to kinda duplicate definitions in the schema.prisma and the graphql schema, so if I have any time I'll explore this interesting library: https://prisma.typegraphql.com

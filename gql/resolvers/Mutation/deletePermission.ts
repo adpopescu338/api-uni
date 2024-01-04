@@ -24,5 +24,5 @@ export const deletePermission = async (
     });
   }
 
-  return permission;
+  return { success: true };
 };
