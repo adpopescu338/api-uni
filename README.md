@@ -5,7 +5,7 @@
 ## What's in here?
 
 This is a graphql api built with apollo-server, prisma and postgres.
-The requirements were quite relaxed, or vague, so I might have gone a bit out of scope. But I suppose the purpose was to familiarize with graphql and prisma, so it was a good exercise.
+The requirements weren't very specific, so I might have gone a bit out of scope. But I suppose the purpose was to familiarize with graphql and prisma, so it was a good exercise.
 
 After starting the app, I advise you to pick a user with `isSysAdmin: true` as simple users can't do much, apart from updating their details.
 You can use the `login` mutation to get a token, then use it in the `x-session-id` header to access the other mutations / queries.
