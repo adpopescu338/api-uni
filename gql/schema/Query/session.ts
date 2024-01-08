@@ -6,7 +6,7 @@ export const session = gql`
     Get the current session details (no user details are returned apart from the user ID)
     This will return an error if the user is not logged in
     """
-    session: Session!
+    session: Session! @authenticated
   }
 
   type Session {

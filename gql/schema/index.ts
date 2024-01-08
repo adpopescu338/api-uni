@@ -7,11 +7,14 @@ import { Permission } from './Permission';
 import { Scalars } from './Scalars';
 import { UserDefinedRole } from './UserDefinedRole';
 import { VoidApiResponse } from './VoidApiResponse';
+import { AuthenticatedTypeDef, SysAdminTypeDef } from 'libs/gql';
 
 export const typesArray = [
   Scalars,
   Query,
   Mutation,
+  AuthenticatedTypeDef,
+  SysAdminTypeDef,
   User,
   Permission,
   UserDefinedRole,

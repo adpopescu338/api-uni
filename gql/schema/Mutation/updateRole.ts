@@ -5,6 +5,11 @@ export const updateRole = gql`
     """
     Only sysadmins can update roles
     """
-    updateRole(id: ID!, description: String, name: String!, permissionIds: [ID!]!): UserDefinedRole!
+    updateRole(
+      id: ID!
+      description: String
+      name: String!
+      permissionIds: [ID!]!
+    ): UserDefinedRole! @sysadmin
   }
 `;

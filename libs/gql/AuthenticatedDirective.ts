@@ -8,7 +8,6 @@ export const AuthenticatedDirective = (schema: GraphQLSchema): GraphQLSchema =>
       const directive = getDirective(schema, fieldConfig, 'authenticated')?.[0];
 
       if (!directive) return;
-
       const { resolve = defaultFieldResolver } = fieldConfig;
 
       return {

@@ -6,5 +6,6 @@ export const createRole = gql`
     Only sysadmins can create roles
     """
     createRole(description: String, name: String!, permissionIds: [ID!]!): UserDefinedRole!
+      @sysadmin
   }
 `;

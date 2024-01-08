@@ -5,7 +5,7 @@ export const sessionAndUser = gql`
     """
     Get the current session and user details
     """
-    sessionAndUser: SessionAndUserResponse!
+    sessionAndUser: SessionAndUserResponse! @authenticated
   }
 
   type SessionAndUserResponse {

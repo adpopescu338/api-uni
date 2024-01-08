@@ -5,7 +5,7 @@ export const updateUser = gql`
     """
     If you're not sysadmin, you must be authenticated as the user you're trying to update
     """
-    updateUser(id: ID!, input: UpdateUserInput!): User!
+    updateUser(id: ID!, input: UpdateUserInput!): User! @authenticated
   }
 
   input UpdateUserInput {

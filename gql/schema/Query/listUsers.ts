@@ -5,7 +5,7 @@ export const listUsers = gql`
     """
     Only sysadmins can list users
     """
-    listUsers(size: Int, page: Int): ListUsersResponse!
+    listUsers(size: Int, page: Int): ListUsersResponse! @sysadmin
   }
 
   type ListUsersResponse {

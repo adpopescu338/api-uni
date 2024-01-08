@@ -13,7 +13,14 @@ import { resolvers } from 'gql/resolvers';
 import { Context } from 'libs/types';
 import express from 'express';
 import { buildSubgraphSchema } from '@apollo/subgraph';
-import { buildContext, logExpressMiddleware, logGqlMiddleware } from 'libs/gql';
+import {
+  buildContext,
+  logExpressMiddleware,
+  logGqlMiddleware,
+  addDirectivesToSchema,
+  AuthenticatedDirective,
+  SysAdminDirective
+} from 'libs/gql';
 import { applyMiddleware } from 'graphql-middleware';
 import { getLogger, Logger } from 'libs/logger';
 import { CacheManager } from 'libs/cache';
@@ -61,9 +68,9 @@ class Main {
   private generateGraphQLSchema(): GraphQLSchema {
     const schema = buildSubgraphSchema([{ typeDefs, resolvers }]);
 
-    // TODO: Add custom directives here
+    const schemaWithDirectives = addDirectivesToSchema(schema, [AuthenticatedDirective, SysAdminDirective]);
 
-    const schemaWithMiddleware = applyMiddleware(schema, logGqlMiddleware(this.logger));
+    const schemaWithMiddleware = applyMiddleware(schemaWithDirectives, logGqlMiddleware(this.logger));
 
     return schemaWithMiddleware;
   }
@@ -98,7 +105,7 @@ class Main {
             },
           },
         }),
-        ApolloServerPluginLandingPageLocalDefault()
+        ApolloServerPluginLandingPageLocalDefault(),
         // TODO: Uncomment the code below when deploying to prod
         // !this.production
         //   ? ApolloServerPluginLandingPageLocalDefault()

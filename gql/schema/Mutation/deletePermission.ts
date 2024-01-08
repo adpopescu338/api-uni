@@ -5,6 +5,6 @@ export const deletePermission = gql`
     """
     Only sysadmins can delete permissions
     """
-    deletePermission(id: ID!): VoidApiResponse!
+    deletePermission(id: ID!): VoidApiResponse! @sysadmin
   }
 `;

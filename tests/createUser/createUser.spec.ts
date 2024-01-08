@@ -41,12 +41,6 @@ describe('createUser', () => {
     expect(createUser).toBeDefined();
   });
 
-  it('Should throw an error if user is not system admin', async () => {
-    await expect(
-      createUser(undefined, { input }, { ...ctx, user: { isSysAdmin: false } } as Context),
-    ).rejects.toThrowError();
-  });
-
   it('Should save the correct data and return the user', async () => {
     const result = await createUser(undefined, { input }, ctx);
     const { lastCall } = (ctx.prisma.user.create as jest.Mock).mock;

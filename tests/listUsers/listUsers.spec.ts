@@ -9,15 +9,6 @@ describe('listUsers', () => {
     expect(listUsers).toBeDefined();
   });
 
-  it('Should throw error if the user is not an admin', async () => {
-    const ctx = {
-      user: {
-        isSysAdmin: false,
-      },
-    } as unknown as Context;
-    await expect(listUsers(null, {}, ctx)).rejects.toThrow(GraphQLError);
-  });
-
   it('Should return the expected result', async () => {
     const result = await listUsers(null, {}, ctx);
 
