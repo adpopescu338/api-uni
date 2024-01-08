@@ -103,7 +103,7 @@ export type MutationUpdateRoleArgs = {
 
 export type MutationUpdateUserArgs = {
   id: Scalars['ID']['input'];
-  input: UserInput;
+  input: UpdateUserInput;
 };
 
 export enum OperationType {
@@ -164,6 +164,13 @@ export type UpdatePermissionInput = {
   id: Scalars['ID']['input'];
   operationTypes?: InputMaybe<Array<OperationType>>;
   resourceName?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type UpdateUserInput = {
+  email?: InputMaybe<Scalars['String']['input']>;
+  isSysAdmin?: InputMaybe<Scalars['Boolean']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  password?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type User = {
