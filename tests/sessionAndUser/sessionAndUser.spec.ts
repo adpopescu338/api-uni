@@ -1,5 +1,5 @@
 import { describe, it, expect, jest } from '@jest/globals';
-import { sessionAndUser } from '../../gql/resolvers/Query/sessionAndUser';
+import { sessionAndUser } from 'gql/resolvers/Query/sessionAndUser';
 import { ctx, expectedResult, mockSessionData } from './data';
 
 describe('sessionAndUser', () => {

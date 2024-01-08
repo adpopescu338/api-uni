@@ -1,5 +1,5 @@
 import { describe, it, expect, jest } from '@jest/globals';
-import { updatePermissions } from '../../gql/resolvers/Mutation/updatePermissions';
+import { updatePermissions } from 'gql/resolvers/Mutation/updatePermissions';
 import { OperationType, UpdatePermissionInput } from 'libs/types/generated';
 
 describe('updatePermissions', () => {

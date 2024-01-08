@@ -1,5 +1,5 @@
 import { describe, it, expect, jest } from '@jest/globals';
-import { deletePermission } from '../../gql/resolvers/Mutation/deletePermission';
+import { deletePermission } from 'gql/resolvers/Mutation/deletePermission';
 
 const ctx = {
   prisma: {

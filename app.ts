@@ -8,18 +8,18 @@ import { ApolloServerPluginUsageReportingDisabled } from '@apollo/server/plugin/
 import { ApolloServerPluginInlineTrace } from '@apollo/server/plugin/inlineTrace';
 import * as util from 'util';
 import { GraphQLSchema } from 'graphql';
-import { typeDefs } from './gql/schema';
-import { resolvers } from './gql/resolvers';
-import { Context } from './libs/types';
+import { typeDefs } from 'gql/schema';
+import { resolvers } from 'gql/resolvers';
+import { Context } from 'libs/types';
 import express from 'express';
 import { buildSubgraphSchema } from '@apollo/subgraph';
-import { buildContext, logExpressMiddleware, logGqlMiddleware } from './libs/gql';
+import { buildContext, logExpressMiddleware, logGqlMiddleware } from 'libs/gql';
 import { applyMiddleware } from 'graphql-middleware';
-import { getLogger, Logger } from './libs/logger';
-import { CacheManager } from './libs/cache';
+import { getLogger, Logger } from 'libs/logger';
+import { CacheManager } from 'libs/cache';
 import { config } from 'dotenv';
 import { Level } from 'pino';
-import { client as prisma } from './prisma/client';
+import { client as prisma } from 'prisma/client';
 
 class Main {
   private logger: Logger;

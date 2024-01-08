@@ -1,5 +1,5 @@
 import { describe, it, expect, jest } from '@jest/globals';
-import { updateRole } from '../../gql/resolvers/Mutation/updateRole';
+import { updateRole } from 'gql/resolvers/Mutation/updateRole';
 
 const payload = {
   id: 'id',

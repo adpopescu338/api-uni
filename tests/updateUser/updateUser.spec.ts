@@ -1,5 +1,5 @@
 import { describe, it, expect, jest } from '@jest/globals';
-import { updateUser } from '../../gql/resolvers/Mutation/updateUser';
+import { updateUser } from 'gql/resolvers/Mutation/updateUser';
 import { Context } from 'libs/types';
 import * as getHashedPasswordModule from 'libs/getHashedPassword';
 

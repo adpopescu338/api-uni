@@ -1,5 +1,5 @@
 import { describe, it, expect, jest } from '@jest/globals';
-import { createRole } from '../../gql/resolvers/Mutation/createRole';
+import { createRole } from 'gql/resolvers/Mutation/createRole';
 
 const payload = {
   name: 'name',

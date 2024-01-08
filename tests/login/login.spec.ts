@@ -1,5 +1,5 @@
 import { describe, it, expect, jest } from '@jest/globals';
-import { login } from '../../gql/resolvers/Mutation/login';
+import { login } from 'gql/resolvers/Mutation/login';
 import { Context } from 'libs/types';
 import { ctx, args, mockUser, expectedReturn, sessionDetails, now, uuid, sessionKey } from './data';
 import bcrypt from 'bcryptjs';

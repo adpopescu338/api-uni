@@ -1,5 +1,5 @@
 import { describe, it, expect, jest } from '@jest/globals';
-import { deleteRole } from '../../gql/resolvers/Mutation/deleteRole';
+import { deleteRole } from 'gql/resolvers/Mutation/deleteRole';
 
 const ctx = {
   prisma: {

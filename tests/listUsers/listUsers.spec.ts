@@ -1,5 +1,5 @@
 import { describe, it, expect, jest } from '@jest/globals';
-import { listUsers } from '../../gql/resolvers/Query/listUsers';
+import { listUsers } from 'gql/resolvers/Query/listUsers';
 import { GraphQLError } from 'graphql';
 import { Context } from 'libs/types';
 import { ctx, expectedResultWithCountFromCache, expectedResultWithCountFromPrisma } from './data';

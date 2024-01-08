@@ -1,5 +1,5 @@
 import { describe, it, expect, jest } from '@jest/globals';
-import { createPermissions } from '../../gql/resolvers/Mutation/createPermissions';
+import { createPermissions } from 'gql/resolvers/Mutation/createPermissions';
 import { OperationType, PermissionInput } from 'libs/types/generated';
 
 describe('createPermissions', () => {
