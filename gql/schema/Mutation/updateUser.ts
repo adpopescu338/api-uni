@@ -5,6 +5,13 @@ export const updateUser = gql`
     """
     If you're not sysadmin, you must be authenticated as the user you're trying to update
     """
-    updateUser(id: ID!, input: UserInput!): User!
+    updateUser(id: ID!, input: UpdateUserInput!): User!
+  }
+
+  input UpdateUserInput {
+    email: String
+    name: String
+    isSysAdmin: Boolean
+    password: String
   }
 `;

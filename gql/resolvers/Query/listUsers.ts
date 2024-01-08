@@ -1,6 +1,7 @@
 import { throwIfNotAdmin } from '../../../libs/throwIfNotAdmin';
 import { Context } from 'libs/types';
 import { ListUsersResponse, QueryListUsersArgs } from 'libs/types/generated';
+import { UserIncludeRolesAndPermissions, userIncludeRolesAndPermissions } from '../../../prisma/selectors';
 
 const DEFAULT_SIZE = 5;
 
@@ -12,17 +13,11 @@ export const listUsers = async (
   throwIfNotAdmin(ctx.user);
 
   size ??= DEFAULT_SIZE;
-  const [users, total] = await Promise.all([
+  const [users, total]: [UserIncludeRolesAndPermissions[], number] = await Promise.all([
     ctx.prisma.user.findMany({
       skip: page ? (page - 1) * DEFAULT_SIZE : undefined,
       take: DEFAULT_SIZE,
-      include: {
-        roles: {
-          include: {
-            permissions: true,
-          },
-        },
-      },
+      ...userIncludeRolesAndPermissions,
     }),
     countUsers(ctx),
   ]);

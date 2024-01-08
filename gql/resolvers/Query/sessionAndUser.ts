@@ -1,6 +1,7 @@
 import { GraphQLError } from 'graphql';
 import { Context, RedisSession } from 'libs/types';
 import { SessionAndUserResponse } from 'libs/types/generated';
+import { UserIncludeRolesAndPermissions, userIncludeRolesAndPermissions } from '../../../prisma/selectors';
 
 export const sessionAndUser = async (
   _: unknown,
@@ -15,17 +16,11 @@ export const sessionAndUser = async (
     throw new GraphQLError('Invalid session');
   }
 
-  const user = await prisma.user.findUnique({
+  const user: UserIncludeRolesAndPermissions | null = await prisma.user.findUnique({
     where: {
       id: sessionData.user.id,
     },
-    include: {
-      roles: {
-        include: {
-          permissions: true,
-        },
-      },
-    },
+    ...userIncludeRolesAndPermissions,
   });
 
   return {

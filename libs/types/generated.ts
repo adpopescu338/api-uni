@@ -172,7 +172,7 @@ export type User = {
   email: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   isSysAdmin: Scalars['Boolean']['output'];
-  roles: Array<UserDefinedRole>;
+  roles: Array<Maybe<UserDefinedRole>>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -182,7 +182,7 @@ export type UserDefinedRole = {
   description?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   name: Scalars['String']['output'];
-  permissions: Array<Permission>;
+  permissions: Array<Maybe<Permission>>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 

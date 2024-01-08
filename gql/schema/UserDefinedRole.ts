@@ -7,6 +7,6 @@ export const UserDefinedRole = gql`
     updatedAt: DateTime
     description: String
     name: String!
-    permissions: [Permission!]!
+    permissions: [Permission]!
   }
 `;

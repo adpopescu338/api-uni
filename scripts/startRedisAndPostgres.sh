@@ -6,4 +6,4 @@
 # For the application server, use ./scripts/startAll.sh
 
 # Usage: ./scripts/startRedisAndPostgres.sh
-POSTGRES_PASSWORD=postgres REDIS_PASSWORD=redis docker-compose up postgres cache
+POSTGRES_PASSWORD=postgres REDIS_PASSWORD=redis docker-compose up postgres cache --build

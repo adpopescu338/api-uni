@@ -2,6 +2,8 @@ import { Context } from 'libs/types';
 import { MutationUpdateUserArgs } from 'libs/types/generated';
 import { throwIfNotAdmin } from '../../../libs/throwIfNotAdmin';
 import { getHashedPassword } from '../../../libs/getHashedPassword';
+import { GraphQLError } from 'graphql';
+import { userIncludeRolesAndPermissions } from '../../../prisma/selectors';
 
 export const updateUser = async (
   _: unknown,
@@ -24,7 +26,15 @@ export const updateUser = async (
       password,
       isSysAdmin: input.isSysAdmin || false,
     },
+    ...userIncludeRolesAndPermissions,
   });
 
-  return updatedUser;
+  if (!updatedUser) {
+    throw new GraphQLError('User not found');
+  }
+
+  return {
+    ...updatedUser,
+    roles: updatedUser.roles || [],
+  };
 };

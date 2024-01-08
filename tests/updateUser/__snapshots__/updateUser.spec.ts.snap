@@ -9,6 +9,13 @@ exports[`updateUser Should save the correct data and return the user 1`] = `
       "name": "name",
       "password": "hashed--password",
     },
+    "include": {
+      "roles": {
+        "include": {
+          "permissions": true,
+        },
+      },
+    },
     "where": {
       "id": "id",
     },

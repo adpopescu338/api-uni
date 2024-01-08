@@ -7,6 +7,6 @@ export const User = gql`
     updatedAt: DateTime
     email: String!
     isSysAdmin: Boolean!
-    roles: [UserDefinedRole!]!
+    roles: [UserDefinedRole]!
   }
 `;
