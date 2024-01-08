@@ -1,15 +1,12 @@
 import { Context } from 'libs/types';
 import { MutationDeletePermissionArgs } from 'libs/types/generated';
-import { throwIfNotAdmin } from 'libs/throwIfNotAdmin';
 import { GraphQLError } from 'graphql/error/GraphQLError';
 
 export const deletePermission = async (
   _: unknown,
   { id }: MutationDeletePermissionArgs,
-  { prisma, user }: Context,
+  { prisma }: Context,
 ) => {
-  throwIfNotAdmin(user);
-
   const permission = await prisma.permission.delete({
     where: {
       id,

@@ -5,7 +5,7 @@ export const updatePermissions = gql`
     """
     Only sysadmins can update permissions
     """
-    updatePermissions(permissions: [UpdatePermissionInput!]!): [Permission!]!
+    updatePermissions(permissions: [UpdatePermissionInput!]!): [Permission!]! @sysadmin
   }
 
   input UpdatePermissionInput {

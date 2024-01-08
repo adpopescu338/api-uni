@@ -22,8 +22,9 @@ export const updateUser = async (
       id,
     },
     data: {
-      ...input,
-      password,
+      name: input.name || undefined,
+      password: password || undefined,
+      email: input.email || undefined,
       isSysAdmin: input.isSysAdmin || false,
     },
     ...userIncludeRolesAndPermissions,

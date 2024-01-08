@@ -5,6 +5,6 @@ export const deleteRole = gql`
     """
     Only sysadmins can delete roles
     """
-    deleteRole(id: ID!): VoidApiResponse!
+    deleteRole(id: ID!): VoidApiResponse! @sysadmin
   }
 `;

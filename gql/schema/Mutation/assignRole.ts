@@ -5,6 +5,6 @@ export const assignRole = gql`
     """
     Only sysadmins can assign roles
     """
-    assignRole(userId: String!, roleId: String!): User!
+    assignRole(userId: String!, roleId: String!): User! @sysadmin
   }
 `;

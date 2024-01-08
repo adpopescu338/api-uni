@@ -5,7 +5,7 @@ export const createUser = gql`
     """
     Only sysadmins can create users
     """
-    createUser(input: UserInput!): User!
+    createUser(input: UserInput!): User! @sysadmin
   }
 
   input UserInput {

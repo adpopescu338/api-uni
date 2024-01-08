@@ -58,10 +58,6 @@ yarn jest
 
 ## What's next?
 
-#### Custom graphql directives
-
-I tried adding 2 custom directives `@authenticated` and `@sysadmin`, but for some reason the request is never reaching the resolver. I spent a few hours trying to debug, then I preferred to move on. I'll get back to it if I have more time.
-
 #### Prisma and graphql
 
 It feels a bit weird to kinda duplicate definitions in the schema.prisma and the graphql schema, so if I have any time I'll explore this interesting library: https://prisma.typegraphql.com

@@ -5,7 +5,7 @@ export const createPermissions = gql`
     """
     Only sysadmins can create permissions
     """
-    createPermissions(permissions: [PermissionInput!]!): [Permission!]!
+    createPermissions(permissions: [PermissionInput!]!): [Permission!]! @sysadmin
   }
 
   input PermissionInput {

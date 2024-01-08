@@ -5,6 +5,6 @@ export const logout = gql`
     """
     Delete the current session
     """
-    logout: VoidApiResponse!
+    logout: VoidApiResponse! @authenticated
   }
 `;
