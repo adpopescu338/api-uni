@@ -1,7 +1,7 @@
 import { describe, it, expect, jest } from '@jest/globals';
 import { createUser } from '../../gql/resolvers/Mutation/createUser';
 import { Context } from 'libs/types';
-import * as getHashedPasswordModule from '../../libs/getHashedPassword';
+import * as getHashedPasswordModule from 'libs/getHashedPassword';
 
 jest.spyOn(getHashedPasswordModule, 'getHashedPassword').mockResolvedValue('hashed--password');
 

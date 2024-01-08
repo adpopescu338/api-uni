@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
-    "serve": "prisma migrate deploy && node dist/app.js",
+    "serve": "prisma migrate deploy && ts-node -r tsconfig-paths/register dist/app.js",
     "gen": "graphql-codegen --config codegen.yml",
     "seed": "ts-node -r tsconfig-paths/register scripts/seedDb.ts"
   },

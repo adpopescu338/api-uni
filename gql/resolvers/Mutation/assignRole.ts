@@ -1,7 +1,7 @@
 import { Context } from 'libs/types';
 import { MutationAssignRoleArgs } from 'libs/types/generated';
-import { throwIfNotAdmin } from '../../../libs/throwIfNotAdmin';
-import { UserIncludeRolesAndPermissions, userIncludeRolesAndPermissions } from '../../../prisma/selectors';
+import { throwIfNotAdmin } from 'libs/throwIfNotAdmin';
+import { UserIncludeRolesAndPermissions, userIncludeRolesAndPermissions } from 'prisma/selectors';
 
 export const assignRole = async (
   _: unknown,

@@ -1,6 +1,6 @@
 import { Context } from 'libs/types';
 import { MutationDeletePermissionArgs } from 'libs/types/generated';
-import { throwIfNotAdmin } from '../../../libs/throwIfNotAdmin';
+import { throwIfNotAdmin } from 'libs/throwIfNotAdmin';
 import { GraphQLError } from 'graphql/error/GraphQLError';
 
 export const deletePermission = async (

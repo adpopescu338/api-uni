@@ -1,5 +1,5 @@
 import { UserDefinedRole } from '@prisma/client';
-import { throwIfNotAdmin } from '../../../libs/throwIfNotAdmin';
+import { throwIfNotAdmin } from 'libs/throwIfNotAdmin';
 import { Context, MutationUpdateRoleArgs } from 'libs/types';
 
 export const updateRole = async (

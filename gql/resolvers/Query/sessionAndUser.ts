@@ -1,7 +1,7 @@
 import { GraphQLError } from 'graphql';
 import { Context, RedisSession } from 'libs/types';
 import { SessionAndUserResponse } from 'libs/types/generated';
-import { UserIncludeRolesAndPermissions, userIncludeRolesAndPermissions } from '../../../prisma/selectors';
+import { UserIncludeRolesAndPermissions, userIncludeRolesAndPermissions } from 'prisma/selectors';
 
 export const sessionAndUser = async (
   _: unknown,

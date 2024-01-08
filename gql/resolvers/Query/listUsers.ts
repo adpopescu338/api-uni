@@ -1,7 +1,7 @@
-import { throwIfNotAdmin } from '../../../libs/throwIfNotAdmin';
+import { throwIfNotAdmin } from 'libs/throwIfNotAdmin';
 import { Context } from 'libs/types';
 import { ListUsersResponse, QueryListUsersArgs } from 'libs/types/generated';
-import { UserIncludeRolesAndPermissions, userIncludeRolesAndPermissions } from '../../../prisma/selectors';
+import { UserIncludeRolesAndPermissions, userIncludeRolesAndPermissions } from 'prisma/selectors';
 
 const DEFAULT_SIZE = 5;
 

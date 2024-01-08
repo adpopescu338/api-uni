@@ -1,6 +1,6 @@
 import { Context } from 'libs/types';
 import { MutationDeleteRoleArgs } from 'libs/types/generated';
-import { throwIfNotAdmin } from '../../../libs/throwIfNotAdmin';
+import { throwIfNotAdmin } from 'libs/throwIfNotAdmin';
 import { GraphQLError } from 'graphql';
 
 export const deleteRole = async (
